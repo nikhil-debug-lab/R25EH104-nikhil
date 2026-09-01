@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Experience from './components/Experience';
 import Strengths from './components/Strengths';
 import CareerObjective from './components/CareerObjective';
 import Education from './components/Education';
@@ -13,11 +14,13 @@ import AdditionalInfo from './components/AdditionalInfo';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Toast from './components/Toast';
+import ResumeModal from './components/ResumeModal';
 import { portfolioData } from './data/portfolioData';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [toast, setToast] = useState(null);
+  const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
 
   // Top scroll progress bar
   const { scrollYProgress } = useScroll();
@@ -29,7 +32,7 @@ export default function App() {
 
   // Section Observer for active navbar item
   useEffect(() => {
-    const sections = ['home', 'about', 'skills', 'projects', 'strengths', 'education', 'contact'];
+    const sections = ['home', 'about', 'skills', 'projects', 'experience', 'strengths', 'education', 'contact'];
     
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 200;
@@ -68,7 +71,7 @@ export default function App() {
 
     notify({
       type: 'success',
-      message: `Downloading ${portfolioData.personalInfo.resumeFilename}. You can replace this file anytime at /public/S_Nikhil_Resume.pdf.`
+      message: `Downloading ${portfolioData.personalInfo.resumeFilename}. Updated resume is ready!`
     });
   };
 
@@ -85,14 +88,19 @@ export default function App() {
       <Navbar
         activeSection={activeSection}
         onDownloadResume={handleDownloadResume}
+        onViewResume={() => setIsResumeModalOpen(true)}
       />
 
       {/* Main Content Sections */}
       <main>
-        <Hero onDownloadResume={handleDownloadResume} />
+        <Hero 
+          onDownloadResume={handleDownloadResume}
+          onViewResume={() => setIsResumeModalOpen(true)}
+        />
         <About />
         <Skills />
         <Projects onNotify={notify} />
+        <Experience />
         <Strengths />
         <CareerObjective />
         <Education />
@@ -103,6 +111,13 @@ export default function App() {
 
       {/* Footer */}
       <Footer onNotify={notify} />
+
+      {/* In-Browser Interactive Resume Previewer Modal */}
+      <ResumeModal
+        isOpen={isResumeModalOpen}
+        onClose={() => setIsResumeModalOpen(false)}
+        onDownload={handleDownloadResume}
+      />
 
       {/* Global Interactive Notification Toast */}
       <Toast toast={toast} onClose={() => setToast(null)} />

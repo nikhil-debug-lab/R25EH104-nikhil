@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, FileDown, Terminal, ChevronRight } from 'lucide-react';
+import { Menu, X, FileText, FileDown, Terminal, ChevronRight } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 const navItems = [
@@ -8,12 +8,13 @@ const navItems = [
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Experience', href: '#experience' },
   { label: 'Strengths', href: '#strengths' },
   { label: 'Education', href: '#education' },
   { label: 'Contact', href: '#contact' },
 ];
 
-export default function Navbar({ activeSection, onDownloadResume }) {
+export default function Navbar({ activeSection, onDownloadResume, onViewResume }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -67,25 +68,26 @@ export default function Navbar({ activeSection, onDownloadResume }) {
                 <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse inline-block"></span>
               </span>
               <span className="text-[10px] text-slate-400 tracking-wider font-mono uppercase">
-                AI & Software
+                Software & Electronics
               </span>
             </div>
           </a>
 
-          {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-slate-800/80 backdrop-blur-md">
+          {/* Desktop Navigation Links */}
+          <nav className="hidden lg:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-slate-800 backdrop-blur-md">
             {navItems.map((item) => {
               const sectionId = item.href.substring(1);
               const isActive = activeSection === sectionId;
+
               return (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className={`relative px-3.5 py-1.5 text-xs lg:text-sm font-medium rounded-full transition-all duration-200 ${
+                  className={`relative px-3.5 py-1.5 text-xs font-medium rounded-full transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 ${
                     isActive
-                      ? 'text-white'
-                      : 'text-slate-300 hover:text-white hover:bg-slate-800/50'
+                      ? 'text-cyan-300 font-semibold'
+                      : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
                   }`}
                 >
                   {isActive && (
@@ -102,20 +104,29 @@ export default function Navbar({ activeSection, onDownloadResume }) {
           </nav>
 
           {/* Action CTA & Mobile Toggle */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <button
+              onClick={onViewResume}
+              className="relative group hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-medium text-slate-300 hover:text-white bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 rounded-full transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+              aria-label="View Resume Preview"
+            >
+              <FileText className="w-3.5 h-3.5 text-cyan-400 group-hover:scale-110 transition-transform" />
+              <span>View Resume</span>
+            </button>
+
             <button
               onClick={onDownloadResume}
-              className="relative group hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-cyan-200 bg-cyan-950/40 hover:bg-cyan-900/50 border border-cyan-500/40 hover:border-cyan-400 rounded-full transition-all duration-200 shadow-sm hover:shadow-[0_0_15px_rgba(6,182,212,0.25)] focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+              className="relative group hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-cyan-200 bg-cyan-950/50 hover:bg-cyan-900/60 border border-cyan-500/40 hover:border-cyan-400 rounded-full transition-all duration-200 shadow-sm hover:shadow-[0_0_15px_rgba(6,182,212,0.25)] focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
               aria-label="Download Resume PDF"
             >
               <FileDown className="w-3.5 h-3.5 text-cyan-400 group-hover:-translate-y-0.5 transition-transform" />
-              <span>Download Resume</span>
+              <span>Download PDF</span>
             </button>
 
             {/* Mobile Hamburger Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/70 border border-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+              className="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/70 border border-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
               aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
               aria-expanded={mobileMenuOpen}
             >
@@ -133,7 +144,7 @@ export default function Navbar({ activeSection, onDownloadResume }) {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: 'easeInOut' }}
-            className="md:hidden glass-nav border-b border-slate-800 px-4 pt-3 pb-6 mt-3 overflow-hidden shadow-2xl"
+            className="lg:hidden glass-nav border-b border-slate-800 px-4 pt-3 pb-6 mt-3 overflow-hidden shadow-2xl"
           >
             <nav className="flex flex-col gap-1.5">
               {navItems.map((item) => {
@@ -156,13 +167,24 @@ export default function Navbar({ activeSection, onDownloadResume }) {
                 );
               })}
 
-              <div className="pt-3 mt-2 border-t border-slate-800">
+              <div className="pt-3 mt-2 border-t border-slate-800 flex flex-col gap-2">
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onViewResume();
+                  }}
+                  className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium text-slate-200 bg-slate-900 border border-slate-700 rounded-xl transition-all"
+                >
+                  <FileText className="w-4 h-4 text-cyan-400" />
+                  <span>View Resume</span>
+                </button>
+
                 <button
                   onClick={() => {
                     setMobileMenuOpen(false);
                     onDownloadResume();
                   }}
-                  className="w-full flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium text-cyan-300 bg-cyan-950/60 hover:bg-cyan-900/70 border border-cyan-500/40 rounded-xl transition-all"
+                  className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium text-cyan-300 bg-cyan-950/60 hover:bg-cyan-900/70 border border-cyan-500/40 rounded-xl transition-all"
                 >
                   <FileDown className="w-4 h-4 text-cyan-400" />
                   <span>Download Resume (PDF)</span>

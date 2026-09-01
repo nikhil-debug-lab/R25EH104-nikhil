@@ -1,37 +1,40 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Terminal, Play, Copy, Check, Sparkles, Cpu, Code2 } from 'lucide-react';
+import { Terminal, Play, Copy, Check, Sparkles, Cpu, Code2, Radio } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 const tabs = [
+  { id: 'smart_lock.ino', name: 'smart_lock.ino', lang: 'cpp', color: 'text-cyan-400' },
+  { id: 'memory_dsa.c', name: 'memory_dsa.c', lang: 'c', color: 'text-blue-400' },
   { id: 'solver.py', name: 'solver.py', lang: 'python', color: 'text-amber-400' },
-  { id: 'main.c', name: 'main.c', lang: 'c', color: 'text-cyan-400' },
-  { id: 'ai_pipeline.py', name: 'ai_pipeline.py', lang: 'python', color: 'text-purple-400' },
 ];
 
 export default function TerminalVisual() {
-  const [activeTab, setActiveTab] = useState('solver.py');
+  const [activeTab, setActiveTab] = useState('smart_lock.ino');
   const [isRunning, setIsRunning] = useState(false);
   const [logs, setLogs] = useState([
-    'nikhil@developer:~$ python3 solver.py',
-    '[✓] loading_environment() .......... READY',
-    '[✓] solving_problems() ............. IN_PROGRESS',
-    '[✓] debugging_code() ............... OPTIMIZED',
-    '[✓] building_future() .............. TARGET_ACTIVE'
+    'nikhil@electronics-lab:~$ gcc/arduino-cli --verify',
+    '[✓] initializing_hardware() ........ ARDUINO_NANO_READY',
+    '[✓] bluetooth_pairing() ............ HC-05_CONNECTED',
+    '[✓] memory_allocation() ............ 0_LEAKS_VERIFIED',
+    '[✓] systems_engineering() .......... OPERATIONAL'
   ]);
   const [copied, setCopied] = useState(false);
 
   const runSimulation = () => {
     if (isRunning) return;
     setIsRunning(true);
-    setLogs(['nikhil@developer:~$ compiling & executing...']);
+    setLogs([`nikhil@developer:~$ running target: ${activeTab}...`]);
 
     const steps = [
-      `[>] target: ${activeTab}`,
-      '[✓] syntax_analysis() ............. PASS (0 errors)',
-      '[✓] logic_verification() ......... OK',
-      '[✓] problem_solving_engine() ..... ACTIVATED',
-      '[✓] S. Nikhil -> Ready for software & AI challenges!'
+      activeTab === 'smart_lock.ino'
+        ? '[✓] bluetooth_uart_listen() ......... OK (9600 baud)'
+        : activeTab === 'memory_dsa.c'
+        ? '[✓] dynamic_heap_allocation() ...... OK (calloc/free)'
+        : '[✓] python_problem_solving() ....... OPTIMAL',
+      '[✓] logic_verification() ............ PASS (0 warnings)',
+      '[✓] hardware_software_bridge() ...... SYNCHRONIZED',
+      '[✓] S. Nikhil -> Ready for software & electronics engineering!'
     ];
 
     steps.forEach((step, index) => {
@@ -63,8 +66,8 @@ export default function TerminalVisual() {
         transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
         className="hidden sm:flex absolute -top-4 -right-2 z-20 items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/90 border border-cyan-500/40 text-cyan-300 text-xs font-mono backdrop-blur-md shadow-lg shadow-cyan-950/50"
       >
-        <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-        <span>AI & Data Science Focus</span>
+        <Radio className="w-3.5 h-3.5 text-cyan-400" />
+        <span>Arduino & HC-05 IoT</span>
       </motion.div>
 
       <motion.div
@@ -73,7 +76,7 @@ export default function TerminalVisual() {
         className="hidden sm:flex absolute -bottom-4 -left-2 z-20 items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/90 border border-purple-500/40 text-purple-300 text-xs font-mono backdrop-blur-md shadow-lg shadow-purple-950/50"
       >
         <Cpu className="w-3.5 h-3.5 text-purple-400" />
-        <span>C & Python Foundation</span>
+        <span>C Dynamic Memory & Python</span>
       </motion.div>
 
       {/* Terminal Card */}
@@ -85,7 +88,7 @@ export default function TerminalVisual() {
             <div className="w-3 h-3 rounded-full bg-amber-500/80" />
             <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
             <span className="ml-2 text-xs font-mono text-slate-400 hidden sm:inline">
-              nikhil@developer:~ (REVA Univ)
+              nikhil@hardware-lab:~
             </span>
           </div>
 
@@ -95,7 +98,7 @@ export default function TerminalVisual() {
               onClick={runSimulation}
               disabled={isRunning}
               className="inline-flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-mono font-medium rounded-md bg-emerald-950/70 hover:bg-emerald-900/80 text-emerald-300 border border-emerald-500/40 transition-colors disabled:opacity-50"
-              title="Run logic simulation"
+              title="Run code execution"
             >
               <Play className={`w-3 h-3 ${isRunning ? 'animate-spin' : ''}`} />
               <span>{isRunning ? 'Running...' : 'Run'}</span>
@@ -141,7 +144,7 @@ export default function TerminalVisual() {
           <div className="flex items-center gap-1.5 text-slate-400 mb-1.5 pb-1 border-b border-slate-800/50">
             <Terminal className="w-3 h-3 text-cyan-400" />
             <span className="uppercase text-[10px] tracking-wider font-semibold text-slate-400">
-              Interactive Output
+              Interactive Hardware & Logic Output
             </span>
           </div>
           <div className="space-y-1 text-slate-300 min-h-[60px] flex flex-col justify-end">

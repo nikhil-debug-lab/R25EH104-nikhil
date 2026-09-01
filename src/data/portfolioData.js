@@ -2,43 +2,46 @@ export const portfolioData = {
   personalInfo: {
     name: "S. Nikhil",
     shortName: "Nikhil",
-    title: "B.Tech — Artificial Intelligence & Data Science | Aspiring Software Developer",
-    badge: "B.Tech AI & Data Science Student",
+    title: "Aspiring Software / Electronics Engineer",
+    badge: "Aspiring Software / Electronics Engineer",
     heroHeading: "Hi, I'm S. Nikhil",
-    heroSubheading: "Aspiring Software Developer",
+    heroSubheading: "Aspiring Software / Electronics Engineer",
     heroDescription:
-      "Motivated B.Tech Artificial Intelligence & Data Science student passionate about programming, problem solving, debugging, and building technology-driven solutions.",
-    phone: "7676289340",
+      "Motivated engineering student with hands-on experience in programming, electronics, embedded systems, and basic web deployment. Comfortable learning new technologies and building practical projects.",
+    location: "Bengaluru, Karnataka, India",
     email: "nikhilniki864@gmail.com",
-    location: "India",
+    phone: "7676289340",
     university: "REVA University, Karnataka, India",
     degree: "B.Tech in Artificial Intelligence & Data Science",
     status: "Currently Pursuing",
     socialLinks: {
-      linkedin: "YOUR_LINKEDIN_URL",
-      github: "YOUR_GITHUB_URL",
+      linkedin: "https://linkedin.com",
+      github: "https://github.com",
     },
     resumePath: "/S_Nikhil_Resume.pdf",
     resumeFilename: "S_Nikhil_Resume.pdf",
+    profileSummary:
+      "Motivated engineering student with hands-on experience in programming, electronics, embedded systems, and basic web deployment. Comfortable learning new technologies and building practical projects. Interested in software development, embedded systems, and technology-driven problem solving."
   },
 
   about: {
     paragraphs: [
-      "I am currently pursuing my B.Tech in Artificial Intelligence & Data Science at REVA University. I have a strong interest in software development and programming, and I am currently developing my skills in C programming and Python.",
-      "I enjoy solving programming problems, debugging code, and improving my logical and analytical thinking. I am continuously learning new concepts and building my programming foundation to prepare for real-world software development and AI-related opportunities."
+      "I am a motivated engineering student based in Bengaluru, Karnataka, with hands-on experience across software programming, electronics, embedded systems, and modern web deployment.",
+      "I enjoy bridging the physical and digital worlds — from low-level C programming with dynamic memory management and Arduino microcontroller hardware integration (Bluetooth, relays, and solenoid locks) to Python problem solving and deploying web projects with Git/GitHub and Vercel.",
+      "Comfortable learning new technologies rapidly, I focus on building reliable, well-documented, and practical technology-driven solutions."
     ],
     atAGlance: [
       {
         icon: "GraduationCap",
-        label: "Education",
-        value: "B.Tech — AI & Data Science",
+        label: "Domain",
+        value: "Software / Electronics",
         color: "from-cyan-500/20 to-blue-500/20",
         border: "border-cyan-500/30"
       },
       {
-        icon: "Building2",
-        label: "University",
-        value: "REVA University",
+        icon: "MapPin",
+        label: "Location",
+        value: "Bengaluru, India",
         color: "from-blue-500/20 to-indigo-500/20",
         border: "border-blue-500/30"
       },
@@ -50,23 +53,23 @@ export const portfolioData = {
         border: "border-purple-500/30"
       },
       {
-        icon: "Brain",
-        label: "Strength",
-        value: "Problem Solving",
+        icon: "Cpu",
+        label: "Embedded / IoT",
+        value: "Arduino Nano & HC-05",
         color: "from-emerald-500/20 to-teal-500/20",
         border: "border-emerald-500/30"
       },
       {
-        icon: "Bug",
-        label: "Skill",
-        value: "Debugging",
+        icon: "Globe",
+        label: "Web & Tools",
+        value: "HTML/CSS, GitHub, Vercel",
         color: "from-amber-500/20 to-orange-500/20",
         border: "border-amber-500/30"
       },
       {
-        icon: "Rocket",
-        label: "Goal",
-        value: "Software Development & AI",
+        icon: "Brain",
+        label: "Strength",
+        value: "Problem Solving & Logic",
         color: "from-cyan-500/20 to-purple-500/20",
         border: "border-cyan-500/30"
       }
@@ -75,25 +78,34 @@ export const portfolioData = {
 
   skills: {
     programming: [
-      { name: "C", icon: "Code", highlight: true },
-      { name: "Python", icon: "FileCode2", highlight: true }
+      { 
+        name: "C Programming", 
+        icon: "Code", 
+        detail: "Dynamic memory allocation (malloc, calloc, realloc, free), pointers, structures, data structures basics" 
+      },
+      { 
+        name: "Python", 
+        icon: "FileCode2", 
+        detail: "Lists, functions, control flow, problem-solving exercises, data handling & algorithms" 
+      }
     ],
-    coreSkills: [
-      { name: "Programming", icon: "Terminal" },
-      { name: "Debugging", icon: "Bug" },
-      { name: "Problem Solving", icon: "BrainCircuit" },
-      { name: "Logical Thinking", icon: "Cpu" },
-      { name: "Analytical Thinking", icon: "Network" }
+    webAndTools: [
+      { name: "HTML / CSS", icon: "Layout", detail: "Semantic markup, modern styling, responsive web design" },
+      { name: "GitHub", icon: "GitFork", detail: "Source-code management, branching, commit discipline & repositories" },
+      { name: "Vercel", icon: "Globe", detail: "Continuous web deployment, domain linking & live project hosting" },
+      { name: "Web Deployment", icon: "Workflow", detail: "Troubleshooting build configs, environment setup & live optimization" }
     ],
-    foundation: [
-      { name: "Basic Programming Concepts", icon: "Boxes" },
-      { name: "Logical Reasoning", icon: "Workflow" },
-      { name: "Algorithmic Thinking", icon: "GitFork" }
+    embeddedAndElectronics: [
+      { name: "Arduino Nano", icon: "Cpu", detail: "Microcontroller architecture, pin mappings, serial communication & I/O logic" },
+      { name: "HC-05 Bluetooth", icon: "Radio", detail: "Wireless UART communication, pairing, and serial command decoding" },
+      { name: "Relay & Solenoid", icon: "Zap", detail: "Low-voltage switching circuitry, solenoid lock actuation & power isolation" },
+      { name: "Digital Electronics", icon: "Binary", detail: "Circuit fundamentals, multiplexers, ripple-carry adders & logic gates" }
     ],
-    currentlyLearning: [
-      { name: "Python Programming", status: "In Progress" },
-      { name: "C Programming", status: "In Progress" },
-      { name: "Data Structures & Algorithms", status: "In Progress" }
+    coreConcepts: [
+      { name: "Data Structures Basics", icon: "Boxes", detail: "Arrays, lists, structures, stack concepts, algorithmic complexity" },
+      { name: "Dynamic Memory in C", icon: "MemoryStick", detail: "Heap allocation, pointers arithmetic, memory safety & resource cleanup" },
+      { name: "Problem Solving", icon: "BrainCircuit", detail: "Structured debugging, logical reasoning & modular problem decomposition" },
+      { name: "Digital Logic Design", icon: "Network", detail: "Combinational circuits, adders, multiplexing & Boolean logic" }
     ]
   },
 
@@ -101,208 +113,298 @@ export const portfolioData = {
     {
       id: "01",
       number: "Project 01",
-      title: "C Programming Practice",
+      title: "Smart Lock — Arduino-Based Security Prototype",
+      badge: "Embedded / Hardware",
       description:
-        "A collection of programming exercises focused on strengthening C programming fundamentals, logical thinking, debugging, and problem solving.",
-      technologies: ["C", "Algorithms", "Memory Basics", "Pointers"],
-      category: "Programming",
-      status: "Learning Project",
+        "Developed a smart electronic locking prototype utilizing an Arduino Nano, HC-05 Bluetooth module, switching relay module, and a solenoid lock for wireless access control.",
+      technologies: ["Arduino Nano", "HC-05 Bluetooth", "Relay Module", "Solenoid Lock", "Embedded C++", "Circuit Design"],
+      category: "Embedded & IoT",
+      status: "Completed Prototype",
       statusVariant: "cyan",
-      github: "YOUR_GITHUB_URL",
-      codeSnippet: `// Example C logic exercise
-#include <stdio.h>
+      github: "https://github.com",
+      highlights: [
+        "Developed a smart locking prototype using an Arduino Nano, HC-05 Bluetooth module, relay, and solenoid lock.",
+        "Worked on the control flow, hardware integration, and Bluetooth-based wireless access authentication concept.",
+        "Prepared comprehensive project documentation covering aim, problem statement, methodology, components, results, advantages, and future scope."
+      ],
+      codeSnippet: `// Smart Lock Control Flow — Arduino Nano + HC-05 Bluetooth
+#include <SoftwareSerial.h>
 
-void solveProblem(int n) {
-    printf("[+] Processing logic for step %d\\n", n);
-    // Focus on memory clarity and deterministic execution
+SoftwareSerial BTSerial(10, 11); // RX, TX
+const int RELAY_PIN = 7;
+const int STATUS_LED = 13;
+
+void setup() {
+  pinMode(RELAY_PIN, OUTPUT);
+  pinMode(STATUS_LED, OUTPUT);
+  digitalWrite(RELAY_PIN, HIGH); // Normally locked
+  
+  Serial.begin(9600);
+  BTSerial.begin(9600);
+  Serial.println("[READY] Smart Lock System Initialized.");
 }
 
-int main() {
-    printf("Executing C Programming Practice...\\n");
-    solveProblem(42);
-    return 0;
-}`,
-      highlights: [
-        "Structured modular code with clean header separation",
-        "Deep focus on pointers, arrays, and standard I/O",
-        "Systematic debugging and step-by-step problem breakdown"
-      ]
+void loop() {
+  if (BTSerial.available()) {
+    char command = BTSerial.read();
+    Serial.print("[AUTH] Received command: ");
+    Serial.println(command);
+    
+    if (command == 'U' || command == '1') {
+      unlockDoor();
+    }
+  }
+}
+
+void unlockDoor() {
+  digitalWrite(RELAY_PIN, LOW); // Trigger relay -> Solenoid opens
+  digitalWrite(STATUS_LED, HIGH);
+  BTSerial.println("STATUS: UNLOCKED");
+  delay(4000); // 4-second unlock duration
+  digitalWrite(RELAY_PIN, HIGH); // Re-lock
+  digitalWrite(STATUS_LED, LOW);
+  BTSerial.println("STATUS: LOCKED");
+}`
     },
     {
       id: "02",
       number: "Project 02",
-      title: "Python Problem Solving",
+      title: "Personal Web Project — GitHub & Vercel Deployment",
+      badge: "Web & Deployment",
       description:
-        "Python programming exercises designed to improve programming fundamentals, logical reasoning, problem solving, and debugging skills.",
-      technologies: ["Python", "Data Structures", "Logic Building", "Debugging"],
-      category: "Programming",
-      status: "Learning Project",
+        "Engineered and deployed a responsive personal portfolio and web project with structured Git source-code management and automated Vercel cloud deployment.",
+      technologies: ["HTML/CSS", "JavaScript", "React", "Tailwind CSS", "GitHub", "Vercel"],
+      category: "Web & Cloud",
+      status: "Live Project",
       statusVariant: "blue",
-      github: "YOUR_GITHUB_URL",
-      codeSnippet: `# Python problem solving & algorithm implementation
-def find_optimal_solution(data_stream):
-    """Clean, readable, and structured logic execution."""
-    processed = [item for item in data_stream if item % 2 == 0]
-    return {
-        "status": "solved",
-        "processed_count": len(processed),
-        "debug_clean": True
-    }
-
-print("Running Python Problem Solving Suite...")`,
+      github: "https://github.com",
       highlights: [
-        "Implementation of core control flows and function paradigms",
-        "Clean error handling and unit test logic exercises",
-        "Developing analytical mindset for algorithmic solutions"
-      ]
+        "Worked with a web project and used GitHub for source-code management and repository organization.",
+        "Explored deployment through Vercel and troubleshooting of repository, build, and deployment issues.",
+        "Implemented clean UI architecture, dynamic dark themes, and responsive mobile-first design."
+      ],
+      codeSnippet: `// Personal Web Project — Deployment & CI/CD Pipeline
+export const siteConfig = {
+  name: "S. Nikhil Portfolio",
+  domain: "s-nikhil.vercel.app",
+  repository: "github.com/nikhil/portfolio",
+  build: {
+    engine: "Vite + React",
+    styling: "Tailwind CSS + Glassmorphism",
+    deployment: "Vercel Automatic CI/CD"
+  }
+};
+
+export function handleDeploymentStatus() {
+  console.log("[+] Synchronizing GitHub commits with Vercel edge...");
+  return {
+    status: "200 OK",
+    deployedUrl: "https://s-nikhil.vercel.app",
+    sslActive: true
+  };
+}`
     },
     {
       id: "03",
       number: "Project 03",
-      title: "AI & Data Science — Future Project",
+      title: "C & Python Algorithmic & Systems Practice",
+      badge: "Academic & Systems",
       description:
-        "An upcoming project focused on applying Python and Artificial Intelligence & Data Science concepts to solve a practical problem.",
-      technologies: ["Python", "AI", "Data Science", "Machine Learning"],
-      category: "Future Project",
-      status: "Coming Soon",
+        "Rigorous hands-on practice in C programming with dynamic memory management (malloc, calloc, realloc, free) and algorithmic Python problem-solving exercises.",
+      technologies: ["C", "Python", "Dynamic Memory", "Pointers", "Data Structures", "Digital Electronics"],
+      category: "Programming",
+      status: "Academic / Practice",
       statusVariant: "purple",
-      github: "YOUR_GITHUB_URL",
-      codeSnippet: `# Upcoming AI & Data Science Pipeline
-import numpy as np
-
-class IntelligentPipeline:
-    def __init__(self, dataset_name="FutureData"):
-        self.dataset = dataset_name
-        self.model_status = "Architecture in Design"
-        
-    def prepare_pipeline(self):
-        print(f"Initializing AI/DS model for {self.dataset}...")
-        return "Ready for training"`,
+      github: "https://github.com",
       highlights: [
-        "Applying Python fundamentals to real-world datasets",
-        "Exploration of AI modeling techniques and evaluation metrics",
-        "End-to-end data processing and predictive experimentation"
-      ]
+        "Hands-on practice with C programming, including dynamic memory allocation using malloc, calloc, realloc, and free.",
+        "Python programming practice involving lists, functions, data structures, and algorithmic problem-solving exercises.",
+        "Academic exposure to digital electronics topics including multiplexers, ripple-carry adders, and logic gates."
+      ],
+      codeSnippet: `/* C Dynamic Memory Management & Pointer Logic */
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct {
+    int id;
+    float reading;
+} SensorData;
+
+int main() {
+    int count = 5;
+    SensorData *buffer = (SensorData *)malloc(count * sizeof(SensorData));
+    
+    if (buffer == NULL) {
+        printf("[-] Memory allocation failed!\\n");
+        return 1;
+    }
+    
+    for (int i = 0; i < count; i++) {
+        buffer[i].id = i + 1;
+        buffer[i].reading = (i + 1) * 12.5f;
+    }
+    
+    printf("[+] Allocated and verified %d sensor nodes in heap.\\n", count);
+    
+    // Clean memory safety practices
+    free(buffer);
+    buffer = NULL;
+    return 0;
+}`
     }
   ],
+
+  academicExperience: {
+    title: "Academic & Practical Experience",
+    points: [
+      {
+        title: "Dynamic Memory Allocation in C",
+        desc: "Hands-on practice with C programming, including dynamic memory allocation using malloc, calloc, realloc, and free with careful memory safety and pointer verification."
+      },
+      {
+        title: "Python Problem Solving & Data Structures",
+        desc: "Python programming exercises involving lists, dictionaries, modular functions, algorithmic thinking, and debugging logic."
+      },
+      {
+        title: "Digital Electronics & Logic Circuits",
+        desc: "Academic exposure to fundamental digital electronics topics such as multiplexers (MUX), ripple-carry adders, Boolean logic minimization, and combinational circuits."
+      }
+    ]
+  },
 
   strengths: [
     {
       id: 1,
       title: "Problem Solving",
-      description: "Ability to approach programming problems logically and systematically.",
+      description: "Approaching programming and hardware challenges with structured, systematic thinking.",
       icon: "Brain",
-      accent: "from-cyan-500 to-blue-500",
-      glow: "group-hover:shadow-[0_0_25px_rgba(6,182,212,0.25)]"
+      accent: "from-cyan-500 to-blue-500"
     },
     {
       id: 2,
-      title: "Debugging",
-      description: "Enjoy identifying errors and understanding how to improve code.",
-      icon: "Bug",
-      accent: "from-blue-500 to-indigo-500",
-      glow: "group-hover:shadow-[0_0_25px_rgba(59,130,246,0.25)]"
+      title: "Practical Learning",
+      description: "Hands-on experience building working prototypes and testing tangible solutions.",
+      icon: "Cpu",
+      accent: "from-blue-500 to-indigo-500"
     },
     {
       id: 3,
-      title: "Logical Thinking",
-      description: "Strong interest in breaking complex problems into smaller steps.",
-      icon: "Cpu",
-      accent: "from-indigo-500 to-purple-500",
-      glow: "group-hover:shadow-[0_0_25px_rgba(99,102,241,0.25)]"
+      title: "Technical Curiosity",
+      description: "Enthusiastic about exploring embedded hardware, IoT protocols, and modern development stacks.",
+      icon: "Sparkles",
+      accent: "from-indigo-500 to-purple-500"
     },
     {
       id: 4,
-      title: "Analytical Thinking",
-      description: "Interested in understanding problems and developing structured solutions.",
-      icon: "BarChart3",
-      accent: "from-purple-500 to-pink-500",
-      glow: "group-hover:shadow-[0_0_25px_rgba(168,85,247,0.25)]"
+      title: "Project Development",
+      description: "End-to-end focus on circuit design, control flow code, testing, and comprehensive documentation.",
+      icon: "FolderGit2",
+      accent: "from-purple-500 to-pink-500"
     },
     {
       id: 5,
-      title: "Continuous Learning",
-      description: "Motivated to continuously improve programming and technical knowledge.",
-      icon: "Sparkles",
-      accent: "from-emerald-500 to-cyan-500",
-      glow: "group-hover:shadow-[0_0_25px_rgba(16,185,129,0.25)]"
+      title: "Adaptability",
+      description: "Comfortable adapting to new tools, troubleshooting deployment errors, and learning new concepts.",
+      icon: "Compass",
+      accent: "from-emerald-500 to-cyan-500"
+    }
+  ],
+
+  careerInterests: [
+    {
+      title: "Software Development",
+      description: "Building clean, maintainable software and core computational systems.",
+      icon: "Code"
     },
     {
-      id: 6,
-      title: "Adaptability",
-      description: "Willing to learn new technologies and development practices.",
-      icon: "Compass",
-      accent: "from-amber-500 to-rose-500",
-      glow: "group-hover:shadow-[0_0_25px_rgba(245,158,11,0.25)]"
+      title: "Embedded Systems",
+      description: "Programming microcontrollers, sensors, actuators, and hardware control flow.",
+      icon: "Cpu"
+    },
+    {
+      title: "IoT (Internet of Things)",
+      description: "Connecting smart devices, wireless communication modules (Bluetooth/WiFi), and automation.",
+      icon: "Radio"
+    },
+    {
+      title: "Web Technologies",
+      description: "Developing modern web interfaces and deploying full-stack web applications.",
+      icon: "Globe"
+    },
+    {
+      title: "Electronics & Automation",
+      description: "Digital electronics, circuit design, automated switching, and hardware-software integration.",
+      icon: "Zap"
     }
   ],
 
   careerObjective: {
     statement:
-      "To begin a career in software development, Artificial Intelligence, or data-driven technology where I can apply my programming and problem-solving skills, gain practical industry experience, and continuously grow as a technology professional.",
+      "Motivated engineering student with hands-on experience in programming, electronics, embedded systems, and basic web deployment. Interested in software development, embedded systems, and technology-driven problem solving.",
     focusAreas: [
       "Software Development",
-      "Artificial Intelligence",
-      "Data-Driven Technology",
-      "Algorithmic Thinking"
+      "Embedded Systems",
+      "IoT & Automation",
+      "Web Technologies",
+      "Digital Electronics"
     ]
   },
 
   education: [
     {
-      degree: "B.Tech — Artificial Intelligence & Data Science",
+      degree: "B.Tech in Engineering",
       institution: "REVA University",
-      location: "Karnataka, India",
+      location: "Bengaluru, Karnataka, India",
       status: "Currently Pursuing",
-      focus: "Artificial Intelligence, Data Science, Core Programming & Computer Science Fundamentals",
+      focus: "Programming Fundamentals, Embedded Systems, Digital Electronics, and Technology-Driven Problem Solving",
       icon: "GraduationCap"
     }
   ],
 
   learningJourney: {
-    headline: "Roadmap to Software Development & AI",
+    headline: "Engineering & Technical Roadmap",
     subheadline:
-      "Currently focused on strengthening programming fundamentals, problem solving, debugging, algorithms, and Python while building a foundation for Artificial Intelligence and Data Science.",
+      "Continuous growth across C programming, Python problem solving, embedded microcontrollers, and modern web deployment.",
     steps: [
       {
         id: 1,
-        title: "C Programming",
-        status: "Active Focus",
-        desc: "Strengthening memory concepts, syntax rigor, logic construction, and debugging fundamentals.",
-        isCurrent: true,
-        tag: "Foundation"
-      },
-      {
-        id: 2,
-        title: "Python",
-        status: "Active Focus",
-        desc: "Mastering versatile syntax, standard library modules, object-oriented concepts, and fast prototyping.",
+        title: "C Programming & Dynamic Memory",
+        status: "Active Foundation",
+        desc: "Mastering malloc, calloc, realloc, free, pointers, structures, and low-level memory efficiency.",
         isCurrent: true,
         tag: "Core Language"
       },
       {
-        id: 3,
-        title: "Data Structures & Algorithms",
-        status: "Currently Building",
-        desc: "Studying array manipulation, lists, trees, search/sort algorithms, and computational complexity.",
+        id: 2,
+        title: "Embedded Systems & Arduino",
+        status: "Practical Focus",
+        desc: "Building prototypes with Arduino Nano, HC-05 Bluetooth, relays, solenoid locks, and circuit integration.",
         isCurrent: true,
-        tag: "Analytical Core"
+        tag: "Hardware & IoT"
+      },
+      {
+        id: 3,
+        title: "Python Problem Solving",
+        status: "Active Practice",
+        desc: "Solving algorithmic problems, working with lists, functions, and modular logic paradigms.",
+        isCurrent: true,
+        tag: "Algorithms"
       },
       {
         id: 4,
-        title: "AI & Data Science",
-        status: "Upcoming Milestone",
-        desc: "Applying mathematics, statistics, data pipelines, and machine learning models to practical problems.",
-        isCurrent: false,
-        tag: "Specialization"
+        title: "Web & Deployment (GitHub & Vercel)",
+        status: "Active Skill",
+        desc: "Source code management with Git/GitHub, continuous deployment with Vercel, and modern UI development.",
+        isCurrent: true,
+        tag: "Web & Cloud"
       },
       {
         id: 5,
-        title: "Software Development",
-        status: "Career Horizon",
-        desc: "Building robust, scalable full-stack and AI-driven applications with modern industry practices.",
-        isCurrent: false,
-        tag: "Target Career"
+        title: "Digital Electronics & Systems",
+        status: "Academic Exposure",
+        desc: "Studying multiplexers, ripple-carry adders, digital logic design, and automated electronics.",
+        isCurrent: true,
+        tag: "Electronics"
       }
     ]
   },
@@ -311,86 +413,113 @@ class IntelligentPipeline:
     languages: [
       { name: "English", level: "Fluent / Professional" },
       { name: "Kannada", level: "Native / Conversational" },
-      { name: "Hindi", level: "Fluent / Conversational" }
+      { name: "Hindi", level: "Conversational" }
     ],
     interests: [
-      { name: "Programming", icon: "Code" },
-      { name: "Artificial Intelligence", icon: "Brain" },
-      { name: "Technology", icon: "Laptop" },
-      { name: "Problem Solving", icon: "Lightbulb" }
+      { name: "Embedded Systems", icon: "Cpu" },
+      { name: "Software Development", icon: "Code" },
+      { name: "IoT & Automation", icon: "Radio" },
+      { name: "Problem Solving", icon: "Brain" }
     ]
   },
 
   contact: {
     title: "Let's Connect",
-    description: "I'm always interested in learning, building, and connecting with people in technology.",
-    phone: "7676289340",
+    description: "I'm always open to discussing technology, embedded systems, software engineering, and practical project collaborations.",
+    location: "Bengaluru, Karnataka, India",
     email: "nikhilniki864@gmail.com",
-    location: "India"
+    phone: "7676289340"
   },
 
   terminalSnippets: {
-    "solver.py": `# Python Problem Solving & Debugging
-def solve_challenge(problem_name):
-    print(f">> Analyzing problem: {problem_name}")
-    
-    # Step 1: Deconstruct into logical units
-    steps = ["Understand constraints", "Design algorithm", "Write clean code", "Debug edge cases"]
-    
-    for i, step in enumerate(steps, 1):
-        print(f"   [{i}/4] {step} ... OK")
-        
-    return {
-        "candidate": "S. Nikhil",
-        "status": "Ready for real-world development",
-        "focus": "AI & Software Engineering"
+    "smart_lock.ino": `// Arduino Nano + HC-05 Bluetooth Smart Lock Prototype
+#include <SoftwareSerial.h>
+
+SoftwareSerial BTSerial(10, 11); // RX, TX
+const int RELAY_PIN = 7;
+const int STATUS_LED = 13;
+
+void setup() {
+  pinMode(RELAY_PIN, OUTPUT);
+  pinMode(STATUS_LED, OUTPUT);
+  digitalWrite(RELAY_PIN, HIGH); // Default: locked
+  
+  Serial.begin(9600);
+  BTSerial.begin(9600);
+  Serial.println("[READY] Smart Lock Prototype Initialized.");
+}
+
+void loop() {
+  if (BTSerial.available()) {
+    char cmd = BTSerial.read();
+    if (cmd == 'U' || cmd == '1') {
+      digitalWrite(RELAY_PIN, LOW); // Solenoid opens
+      digitalWrite(STATUS_LED, HIGH);
+      BTSerial.println("STATUS: ACCESS_GRANTED");
+      delay(4000);
+      digitalWrite(RELAY_PIN, HIGH); // Relock
+      digitalWrite(STATUS_LED, LOW);
+      BTSerial.println("STATUS: LOCKED");
     }
+  }
+}`,
 
-# Execute
-result = solve_challenge("Algorithmic Optimization")
-print(result)`,
-
-    "main.c": `/* C Programming Foundation & Memory Logic */
+    "memory_dsa.c": `/* C Programming: Dynamic Memory Allocation & Safety */
 #include <stdio.h>
-#include <stdbool.h>
+#include <stdlib.h>
 
 typedef struct {
-    char name[30];
-    char university[30];
-    char passion[40];
-} Developer;
+    int nodeId;
+    char label[32];
+    double signalStrength;
+} Node;
 
 int main() {
-    Developer nikhil = {
-        .name = "S. Nikhil",
-        .university = "REVA University",
-        .passion = "AI & Software Development"
-    };
-
-    printf("========================================\\n");
-    printf("Developer: %s\\n", nikhil.name);
-    printf("Degree   : B.Tech AI & Data Science\\n");
-    printf("Focus    : Problem Solving & Debugging\\n");
-    printf("========================================\\n");
-
+    int totalNodes = 4;
+    // Dynamic memory allocation with calloc (zero initialized)
+    Node *nodes = (Node *)calloc(totalNodes, sizeof(Node));
+    
+    if (nodes == NULL) {
+        printf("[-] Memory allocation failed.\\n");
+        return 1;
+    }
+    
+    printf("[+] Memory allocated successfully at: %p\\n", (void *)nodes);
+    
+    for (int i = 0; i < totalNodes; i++) {
+        nodes[i].nodeId = i + 1;
+        snprintf(nodes[i].label, sizeof(nodes[i].label), "Sensor_Node_%d", i + 1);
+        nodes[i].signalStrength = 95.5 - (i * 4.2);
+        printf("   -> Node %d: %s | Signal: %.1fdB\\n", nodes[i].nodeId, nodes[i].label, nodes[i].signalStrength);
+    }
+    
+    // Resource cleanup
+    free(nodes);
+    nodes = NULL;
+    printf("[✓] Memory freed safely (No leaks).\\n");
     return 0;
 }`,
 
-    "ai_pipeline.py": `# AI & Data Science Future Roadmap
-import numpy as np
+    "solver.py": `# Python Algorithmic Problem Solving & Data Structures
+def analyze_sensor_telemetry(readings):
+    """Clean, structured data processing in Python."""
+    valid_readings = [r for r in readings if r.get("valid", False)]
+    average_signal = sum(r["signal"] for r in valid_readings) / max(len(valid_readings), 1)
+    
+    return {
+        "candidate": "S. Nikhil",
+        "role": "Aspiring Software / Electronics Engineer",
+        "processed_samples": len(valid_readings),
+        "mean_signal_db": round(average_signal, 2),
+        "status": "Optimal Execution"
+    }
 
-class AIDeveloperPath:
-    def __init__(self):
-        self.developer = "S. Nikhil"
-        self.skills = ["C", "Python", "DSA", "Problem Solving"]
-        self.next_goals = ["Machine Learning", "Neural Nets", "Data Modeling"]
+data = [
+    {"id": 1, "signal": 92.4, "valid": True},
+    {"id": 2, "signal": 88.1, "valid": True},
+    {"id": 3, "signal": 0.0, "valid": False}
+]
 
-    def evaluate_growth(self):
-        print(f"Evaluating candidate: {self.developer}")
-        print("Continuous Learning Rate: MAXIMUM")
-        return "Growth trajectory verified."
-
-pipeline = AIDeveloperPath()
-print(pipeline.evaluate_growth())`
+print(analyze_sensor_telemetry(data))`
   }
 };

@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Languages, Heart, Code2, Brain, Laptop, Lightbulb, Check } from 'lucide-react';
+import { Languages, Heart, Code2, Brain, Cpu, Radio, Check } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 const interestIcons = {
   Code: Code2,
   Brain: Brain,
-  Laptop: Laptop,
-  Lightbulb: Lightbulb,
+  Cpu: Cpu,
+  Radio: Radio,
 };
 
 export default function AdditionalInfo() {
@@ -68,8 +68,8 @@ export default function AdditionalInfo() {
                 <Heart className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white">Interests</h3>
-                <span className="text-xs font-mono text-slate-400">Passions & Focus</span>
+                <h3 className="text-lg font-bold text-white">Focus & Passions</h3>
+                <span className="text-xs font-mono text-slate-400">Technical Drive</span>
               </div>
             </div>
 

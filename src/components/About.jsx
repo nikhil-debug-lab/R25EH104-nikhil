@@ -1,15 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Building2, Code2, Brain, Bug, Rocket, UserCheck, Sparkles } from 'lucide-react';
+import { 
+  GraduationCap, 
+  MapPin, 
+  Code2, 
+  Cpu, 
+  Globe, 
+  Brain, 
+  Bug, 
+  Rocket, 
+  UserCheck, 
+  Sparkles,
+  Zap,
+  Building2
+} from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 const iconMap = {
   GraduationCap: GraduationCap,
-  Building2: Building2,
+  MapPin: MapPin,
   Code2: Code2,
+  Cpu: Cpu,
+  Globe: Globe,
   Brain: Brain,
   Bug: Bug,
   Rocket: Rocket,
+  Zap: Zap,
+  Building2: Building2
 };
 
 export default function About() {
@@ -50,7 +67,7 @@ export default function About() {
               
               <div className="flex items-center gap-2.5 mb-4 text-cyan-300 font-semibold text-sm">
                 <Sparkles className="w-4 h-4 text-cyan-400" />
-                <span>Passionate Problem Solver & Engineering Mind</span>
+                <span>Software & Electronics Engineering Profile</span>
               </div>
 
               <div className="space-y-4 text-slate-300 text-base sm:text-lg leading-relaxed">
@@ -65,7 +82,7 @@ export default function About() {
               <div className="mt-6 pt-6 border-t border-slate-800/80 flex items-start gap-3 bg-slate-900/40 p-4 rounded-xl">
                 <div className="w-1.5 h-12 bg-cyan-500 rounded-full shrink-0" />
                 <p className="text-sm font-medium text-slate-300 italic">
-                  "Committed to mastering core computer science fundamentals, writing clean code, and preparing for future AI and software engineering innovations."
+                  "Dedicated to mastering programming rigor, low-level microcontroller integration, memory allocation, and deploying practical web solutions."
                 </p>
               </div>
             </div>
@@ -89,7 +106,7 @@ export default function About() {
                   </h3>
                 </div>
                 <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider px-2 py-0.5 rounded bg-slate-800/80">
-                  Profile Snapshot
+                  Profile Highlights
                 </span>
               </div>
 

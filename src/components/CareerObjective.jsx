@@ -1,10 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Target, Quote, Sparkles, Compass, CheckCircle2 } from 'lucide-react';
+import { Target, Quote, Sparkles, Compass, CheckCircle2, Cpu, Code, Radio, Globe, Zap } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
+const interestIcons = {
+  Code: Code,
+  Cpu: Cpu,
+  Radio: Radio,
+  Globe: Globe,
+  Zap: Zap
+};
+
 export default function CareerObjective() {
-  const { careerObjective } = portfolioData;
+  const { careerObjective, careerInterests } = portfolioData;
 
   return (
     <section className="relative py-20 lg:py-24 overflow-hidden">
@@ -31,14 +39,14 @@ export default function CareerObjective() {
             <div className="flex items-center justify-between gap-4 mb-8">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-cyan-500/30 text-cyan-300 text-xs font-mono">
                 <Target className="w-4 h-4 text-cyan-400" />
-                <span>05. CAREER MISSION</span>
+                <span>06. CAREER FOCUS</span>
               </div>
               <Quote className="w-10 h-10 text-slate-800" />
             </div>
 
             {/* Title */}
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-6">
-              Career <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Objective</span>
+              Career <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">Interests & Profile</span>
             </h2>
 
             {/* Main Statement */}
@@ -49,18 +57,30 @@ export default function CareerObjective() {
             {/* Focus Pillars */}
             <div className="mt-10 pt-8 border-t border-slate-800/80">
               <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block mb-4">
-                Target Growth Spheres
+                Target Career Interests
               </span>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
-                {careerObjective.focusAreas.map((area, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-cyan-500/30 text-xs font-medium text-slate-300 transition-colors"
-                  >
-                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                    <span>{area}</span>
-                  </div>
-                ))}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+                {careerInterests.map((interest, index) => {
+                  const IconComp = interestIcons[interest.icon] || Sparkles;
+                  return (
+                    <div
+                      key={index}
+                      className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-cyan-500/40 text-xs font-medium text-slate-200 hover:text-white transition-all group flex flex-col justify-between"
+                    >
+                      <div className="flex items-center gap-2 mb-1.5">
+                        <div className="p-1.5 rounded-lg bg-slate-800 text-cyan-400 group-hover:bg-cyan-950 group-hover:text-cyan-300 transition-colors">
+                          <IconComp className="w-3.5 h-3.5" />
+                        </div>
+                        <span className="font-semibold text-xs text-white group-hover:text-cyan-300">
+                          {interest.title}
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-slate-400 leading-tight">
+                        {interest.description}
+                      </p>
+                    </div>
+                  );
+                })}
               </div>
             </div>
 

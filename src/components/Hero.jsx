@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Mail, FileDown, Sparkles, Code2, MapPin, University } from 'lucide-react';
+import { ArrowRight, Mail, FileText, FileDown, Sparkles, Code2, MapPin, Cpu } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import TerminalVisual from './TerminalVisual';
 
-export default function Hero({ onDownloadResume }) {
+export default function Hero({ onDownloadResume, onViewResume }) {
   const { personalInfo } = portfolioData;
 
   return (
@@ -72,24 +72,24 @@ export default function Hero({ onDownloadResume }) {
               {personalInfo.heroDescription}
             </motion.p>
 
-            {/* University & Location Badges */}
+            {/* Highlights Badges */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.35 }}
-              className="flex flex-wrap items-center gap-3 mt-6 text-xs text-slate-400 font-medium"
+              className="flex flex-wrap items-center gap-2.5 sm:gap-3 mt-6 text-xs text-slate-400 font-medium"
             >
-              <div className="flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-900/60 border border-slate-800">
-                <University className="w-3.5 h-3.5 text-blue-400" />
-                <span>{personalInfo.university}</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-900/60 border border-slate-800">
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800">
                 <MapPin className="w-3.5 h-3.5 text-rose-400" />
                 <span>{personalInfo.location}</span>
               </div>
-              <div className="flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-900/60 border border-slate-800">
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800">
+                <Cpu className="w-3.5 h-3.5 text-cyan-400" />
+                <span>Arduino & Embedded Systems</span>
+              </div>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800">
                 <Code2 className="w-3.5 h-3.5 text-purple-400" />
-                <span>C & Python Focus</span>
+                <span>C & Python Programming</span>
               </div>
             </motion.div>
 
@@ -98,32 +98,33 @@ export default function Hero({ onDownloadResume }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="mt-8 flex flex-wrap items-center gap-4 w-full sm:w-auto"
+              className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4 w-full sm:w-auto"
             >
               <a
                 href="#projects"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 group"
               >
-                <span>View My Projects</span>
+                <span>View Projects</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
 
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-slate-200 bg-slate-900/80 hover:bg-slate-800 hover:text-white border border-slate-700/80 hover:border-slate-600 rounded-xl backdrop-blur-md transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
+              <button
+                onClick={onViewResume}
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 text-sm font-semibold text-slate-200 bg-slate-900/90 hover:bg-slate-800 hover:text-white border border-slate-700/80 hover:border-cyan-500/40 rounded-xl backdrop-blur-md transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 shadow-sm"
+                aria-label="View Resume Modal"
               >
-                <Mail className="w-4 h-4 text-cyan-400" />
-                <span>Contact Me</span>
-              </a>
+                <FileText className="w-4 h-4 text-cyan-400" />
+                <span>View Resume</span>
+              </button>
 
               <button
                 onClick={onDownloadResume}
-                className="inline-flex items-center justify-center gap-2 px-4 py-3 text-xs sm:text-sm font-medium text-slate-400 hover:text-cyan-300 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-lg group"
+                className="inline-flex items-center justify-center gap-2 px-4 py-3.5 text-sm font-medium text-slate-400 hover:text-cyan-300 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-lg group"
                 aria-label="Download Resume"
               >
                 <FileDown className="w-4 h-4 text-slate-400 group-hover:text-cyan-300 transition-colors" />
                 <span className="underline underline-offset-4 decoration-slate-600 group-hover:decoration-cyan-400">
-                  Download Resume
+                  Download PDF
                 </span>
               </button>
             </motion.div>
