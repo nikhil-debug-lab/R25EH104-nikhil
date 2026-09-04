@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import Navbar from './components/Navbar';
-import AuroraBackground from './components/AuroraBackground';
+import CyberMatrixBackground from './components/CyberMatrixBackground';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -77,10 +77,10 @@ export default function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#030712] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200">
+    <div className="relative min-h-screen bg-[#030610] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200">
       
-      {/* Dynamic Aurora & Mesh Glow Background */}
-      <AuroraBackground />
+      {/* Cyberpunk Matrix & Tech HUD Background */}
+      <CyberMatrixBackground />
 
       {/* Top Scroll Indicator */}
       <motion.div
