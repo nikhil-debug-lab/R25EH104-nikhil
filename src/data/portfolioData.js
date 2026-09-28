@@ -220,7 +220,33 @@ export function handleDeploymentStatus() {
         "Hands-on practice with C programming, including dynamic memory allocation using malloc, calloc, realloc, and free.",
         "Python programming practice involving lists, functions, data structures, and algorithmic problem-solving exercises.",
         "Academic exposure to digital electronics topics including multiplexers, ripple-carry adders, and logic gates."
+        {
+      id: "04",
+      number: "Project 04",
+      title: "Personal Portfolio Website",
+      badge: "Web Development",
+      description:
+        "A responsive personal portfolio website built with React to showcase my skills, projects, education, and technical journey.",
+      technologies: ["React", "JavaScript", "HTML", "CSS", "GitHub"],
+      category: "Web Development",
+      status: "Active Project",
+      statusVariant: "cyan",
+      github: "https://github.com/nikhil-debug-lab/R25EH104-nikhil",
+      highlights: [
+        "Built a responsive portfolio website using React components.",
+        "Created a dedicated Projects section to showcase technical work.",
+        "Used GitHub for version control and project collaboration."
       ],
+      codeSnippet: `// Personal Portfolio — React
+function Portfolio() {
+  return (
+    <section>
+      <h2>Projects</h2>
+      <p>Showcasing my technical projects and learning journey.</p>
+    </section>
+  );
+}`
+    } ],
       codeSnippet: `/* C Dynamic Memory Management & Pointer Logic */
 #include <stdio.h>
 #include <stdlib.h>
